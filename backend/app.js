@@ -8,6 +8,7 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const scraperRouter = require('./routes/scraper');
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/scraper', scraperRouter);
 
 // Example scheduled job: log a message every minute
 cron.schedule('* * * * *', () => {
